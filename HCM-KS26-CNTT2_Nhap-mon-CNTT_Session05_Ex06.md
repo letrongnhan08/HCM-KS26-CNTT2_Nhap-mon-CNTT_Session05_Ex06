@@ -1,12 +1,12 @@
 Bước 1 : mkdir smart-farm/bin, smart-farm/config, smart-farm/data
 
-Bước 2 : 
+Bước 2 :
 
 New-Item smart-farm\\config\\.env -force
 
-(gi smart-farm\\config\\.env -Force).Attributes='Hidden' 
+(gi smart-farm\\config\\.env -Force).Attributes='Hidden'
 
-ls smart-farm\\config -Force 
+ls smart-farm\\config -Force
 
 Get -ChildItem thông thường không nhìn thấy file .env vì .env được gán là file ẩn nên get-childItem chỉ tìm thấy những thư mục bình thường không tìm file ẩn nên phải dung -force để get-childItem nhìn thấy file ẩn
 
@@ -16,7 +16,7 @@ Bước 3 : cp C:\\Users\\Public\\template.ps1 \~\\smart-farm\\bin\\pump\_contro
 
 
 
-Bước 4 : ls smart-farm -Recurse -Force 
+Bước 4 : ls smart-farm -Recurse -Force
 
 
 
@@ -36,7 +36,7 @@ Nhật ký (Log) các câu lệnh PowerShell đã thực hiện:
 |-|-|
 |New-Item smart-farm\\config\\.env -force<br />(gi smart-farm\\config\\.env -Force).Attributes='Hidden'|tạo file ẩn <br />và xác nhận file|
 |cp C:\\Users\\Public\\template.ps1 \~\\smart-farm\\bin\\pump\_control.ps1|sao chép và đổi tên file|
-|ls smart-farm-Recurse -Force |xem danh sách các thư mục trong smart-farm|
+|ls smart-farm-Recurse -Force|xem danh sách các thư mục trong smart-farm|
 
 
 
@@ -48,9 +48,9 @@ Bản phân tích luồng IPO cho toàn bộ quá trình thiết lập căn cứ
 
 
 
-|Input|Tạo thư mục (mkdir smart-farm/bin, smart-farm/config, smart-farm/data)<br />Tạo file ẩn (New-Item smart-farm\\config\\.env -force<br />(gi smart-farm\\config\\.env -Force).Attributes='Hidden')|
+|Input|Tạo thư mục (mkdir smart-farm/bin, smart-farm/config, smart-farm/data)<br />Tạo file ẩn (New-Item smart-farm\\config\\.env -force<br />(gi smart-farm\\config\\.env -Force).Attributes='Hidden')<br />sao chép và đổi tên file (cp C:\\Users\\Public\\template.ps1 \~\\smart-farm\\bin\\pump\_control.ps1)<br />xem danh sách các thư mục trong smart-farm (ls smart-farm-Recurse -Force)|
 |-|-|
-|Process|(1) mkdir tạo cây thư mục, (2) New-Item tạo .env + gi để chọn file chỉnh sửa + Attributes  ẩn file, (3) cp sao chép và đổi tên, (4) ls -Recurse -Force kiểm tra |
+|Process|(1) mkdir tạo cây thư mục, (2) New-Item tạo .env + gi để chọn file chỉnh sửa + Attributes  ẩn file, (3) cp sao chép và đổi tên, (4) ls -Recurse -Force kiểm tra|
 |Output|Cấu trúc smart-farm/ gồm bin/pump\_control.ps1, config/.env (ẩn), data/ (rỗng)|
 
 
